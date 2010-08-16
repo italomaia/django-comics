@@ -1,0 +1,22 @@
+{% extends "comics/base.html" %}
+{% load i18n %}
+
+{% block body %}
+
+<div style="margin-top: 1em;">
+    <fieldset>
+        <legend>{{form_legend}}</legend>
+        <form method="post" enctype="multipart/form-data">
+            <ul class="lista clear">
+                
+                {% include "comics/form.html" %}
+                
+            </ul>
+            <div class="span-4">
+                <input type="submit" name="_save" value='{% trans "Save"%}' />
+                <input type="reset" value='{% trans "Clear" %}' />
+            </div>
+        </form>
+    </fieldset>
+</div>
+{% endblock body %}

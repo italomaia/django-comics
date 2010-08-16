@@ -1,0 +1,29 @@
+{% load comments i18n %}
+{% get_comment_form for commented_obj as form %}
+<fieldset>
+    <legend>{% trans "Comment"%}</legend>
+    {# render_comment_form for strip #}
+    <form method="post" action='{% comment_form_target %}'>
+        <input type="hidden" name="next" value="{{ commented_obj.link }}" />
+        <ul>
+        {% for field in form %}
+            {% if field.is_hidden %}
+            <li style="display:none">{{ field }}</li>
+            {% else %}
+            <li>
+                <div class="clear">{{ field.label_tag }}
+                {% if field.field.required %}<b style="color:red; cursor:default;" title="required">*</b>{% endif %}</div>
+                {% if field.help_text %}
+                <div class="quiet small">{{field.help_text}}</div>
+                {% endif %}
+                <div class="clear">{{ field }}</div>
+            </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        <div>
+            <input type="submit" value='{% trans "Send" %}' />
+            <input type="reset" value='{% trans "Clean form" %}' />
+        </div>
+    </form>
+</fieldset>

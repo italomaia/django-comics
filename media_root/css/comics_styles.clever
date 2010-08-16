@@ -1,0 +1,134 @@
+bg_color = #bdd6c2
+
+a:
+  color: darkgray
+  cursor: default
+  font-weight: bold
+  
+  &:hover:
+    color: darkred
+  
+  &:link, &:visited:
+    color: black
+    cursor: pointer
+  
+a, .text:
+  font-size: 1.1em
+
+body:
+  background-image: url(images/bk_barra.png)
+  background-repeat: repeat
+  margin-top: 0px
+
+input[type=submit], input[type=reset]:
+  background-color: white
+  border: 1px solid lightgray
+  border-right: 1px solid gray
+  border-bottom: 1px solid gray
+  cursor: pointer
+  font-weight: bold
+  
+  &:hover:
+    background-color: #e7ecf1
+
+input[type=text]:
+  border: 1px solid gray
+  font-weight: bold
+  padding: 4px
+  
+  &:hover:
+    border: 1px solid lightgray
+
+form ul:
+  list-style: none
+
+.strip_nav:
+  text-align: center
+  margin-bottom: 5px
+
+.strip_content:
+  text-align: center
+  margin-bottom: 5px
+
+.strip_legend:
+  text-align: center
+  margin-bottom: 5px
+  p:
+    margin-bottom: 5px
+  
+.small.quiet:
+  cursor: default
+
+.comics-body:
+  background-color: white
+  padding: 10px
+
+.container:
+  border: 4px dashed black
+  margin-top: 1em
+
+.image-author-description:
+  border: 1px solid lightgray
+  padding: 1em
+
+.shelf.bar:
+  border-top: 2px solid black
+  border-bottom: 2px solid black
+  padding: 4px 0px
+
+.shelf .book:
+  margin-right: .4em
+
+table:
+  border: 1px solid $bg_color.darken(10)
+  th:
+    background-color: $bg_color.darken(10)
+    color: white
+  tr.mark:
+    background-color: $bg_color.brighten(10)
+  
+  
+table.list_webcomics:
+  .col1, .col3:
+    text-align:center
+  
+table.archive:
+  border: 1px solid lightblue
+
+  .title:
+    width: 50%
+    overflow: hidden
+
+table.archive .created:
+  text-align: center
+
+div.comic-headerImage:
+  margin-bottom: 5px
+
+img.comic-headerImage:
+  width: 100%
+
+.lerror:
+  label: color: red
+
+.text-content:
+  background-repeat: repeat-y
+  background-position: right
+  border: 2px solid black
+  margin: 10px 5px
+  padding: 1em
+
+.webpage:
+  text-align: justify
+  margin-bottom: 2em
+
+  .text:
+    padding: 0 1em 1em
+
+  .control:
+    background-color: #e6e6e6
+    margin-bottom: .5em
+    padding: 2px 4px
+
+#strip_image:
+  border: 4px solid black

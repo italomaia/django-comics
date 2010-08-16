@@ -1,0 +1,11 @@
+{% extends "comics/base.html" %}
+{% load i18n %}
+
+{% block body %}
+<div>
+    {%blocktrans%}This comic possibly has <b style="color: pink;">mature content</b>.
+    If you're above eighteen(18) years old, please, click in the button ahead
+    to proceed{%endblocktrans%}.
+    <a id="allowMatureContent" class="fakebutton" href="?mature=1">{% trans "Proceed"%}</a>
+</div>
+{% endblock body %}

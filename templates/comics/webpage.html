@@ -1,0 +1,16 @@
+{% extends "comics/base.html" %}
+
+{% load i18n %}
+
+{% block body %}
+
+<div class="clear webpage">
+    <div class="clear control">
+        <a href="{% url comics.edit_webpage webcomic.slug webpage.slug %}">{% trans "Edit" %}</a>
+        <a href="{% url comics.remove_webpage webcomic.slug webpage.slug %}">{% trans "Remove" %}</a>
+    </div>
+    <h3>{{webpage}} - {{webpage.created|date}}</h3>
+    <div class="text">{{webpage.content|safe}}</div>
+</div>
+
+{% endblock body %}

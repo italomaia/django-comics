@@ -1,0 +1,12 @@
+{% load comments %}
+{% get_comment_list for commented_obj as comment_list %}
+
+{% for comment in comment_list reversed %}
+<div class="clear">
+    <div class="box">
+        {% if comment.user_url %}<a href='{{comment.user_url}}'>WebSite</a> - {% endif %}<strong>{{comment.user_name}} in {{comment.submit_date|date:"d/M/Y, G:i"}}</strong>
+        <hr />
+        <p>{{comment.comment|linebreaks}}</p>
+    </div>
+</div>
+{% endfor %}

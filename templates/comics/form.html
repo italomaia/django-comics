@@ -1,0 +1,32 @@
+{% for field in form %}
+<li class="clear">
+
+{# if this field has errors, mark it! #}
+<div class="clear {% if field.errors %}lerror{%endif%}">
+    {{ field.label_tag }}
+    
+    {% if field.field.required %}
+    <b style="color:red; cursor:default" title="required">*</b>
+    {% endif %}
+</div>
+    
+{% if field.help_text %}
+<div class="clear">
+    <span class="small quiet">{{field.help_text}}</span>
+</div>
+{% endif %}
+    
+<div class="clear">
+    {{field}}
+    {% if field.errors %}
+    <div class="error clear">
+        <ul>
+        {% for error in field.errors %}
+            <li>{{error}}</li>{% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+</li>
+{% endfor %}

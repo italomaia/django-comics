@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-15 05:08-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:12 models.py:13
+msgid "Created time"
+msgstr "Tempo de Criação"
+
+#: models.py:20
+msgid "Published?"
+msgstr "Publicado?"
+
+#: models.py:22 templates/comics/archive.html:10
+msgid "Title"
+msgstr "Título"
+
+#: models.py:23
+msgid "Well, write down your thoughts"
+msgstr "Escreva o que você quiser escrever"
+
+#: models.py:47
+msgid "What's the webcomic name?"
+msgstr ""
+
+#: models.py:48
+msgid "Name your baby!"
+msgstr "Dê um nome ao seu filhote!"
+
+#: models.py:50
+msgid "Header Image"
+msgstr "Imagem do cabeçalho"
+
+#: models.py:51
+msgid "This image goes at the top of the webpage"
+msgstr "Esta imagem vai na parte superior da paǵina."
+
+#: models.py:53
+msgid "Logo"
+msgstr "Logo"
+
+#: models.py:57
+msgid "Who's the artist behind the pencil?"
+msgstr "Quem é o artista por trás do pincel?"
+
+#: models.py:59
+msgid "A few words about this webcomic..."
+msgstr "Algumas palavras sobre este quadrinho online..."
+
+#: models.py:62
+msgid "May this webcomic contain mature content?"
+msgstr "Este quadrinho terá conteúdo adulto?"
+
+#: models.py:63
+msgid "If true, a warn message will be showed."
+msgstr "Se verdadeiro, uma mensagem de aviso será mostrada."
+
+#: models.py:94
+msgid "Next Strip"
+msgstr "Próxima Tirinha"
+
+#: models.py:96
+msgid "Previous Strip"
+msgstr "Tirinha Anterior"
+
+#: models.py:99
+msgid "Comic Book"
+msgstr "Todas as Revistinhas"
+
+#: models.py:100
+msgid "Strip's name"
+msgstr "Nome da Tirinha"
+
+#: models.py:101
+msgid "A title for the strip?"
+msgstr "Um títlo para a tirinha?"
+
+#: models.py:103
+msgid "Description"
+msgstr "Descrição"
+
+#: models.py:104
+msgid "Accepts markdown"
+msgstr "Aceita markdown"
+
+#: models.py:107
+msgid "Strip Image"
+msgstr "Imagem da Tirinha"
+
+#: models.py:108
+msgid "Strip image showed to the viewer"
+msgstr "Imagem da tirinha mostrada ao visitante"
+
+#: models.py:110
+msgid "Tags"
+msgstr "Tags"
+
+#: models.py:111
+msgid "Comma separeted (ex: subject, subject..."
+msgstr "Separado por vírgulas (ex: assunto, assunto...)"
+
+#: models.py:113
+msgid "Enable comments?"
+msgstr "Habilitar comentários?"
+
+#: widgets.py:15
+msgid "Currently:"
+msgstr "Atualmente:"
+
+#: widgets.py:15
+msgid "Change:"
+msgstr "Mudar:"
+
+#: templates/comics/archive.html:7 templates/comics/base.html:66
+msgid "Archive"
+msgstr "Arquivo"
+
+#: templates/comics/archive.html:11
+msgid "Released"
+msgstr "Publicada"
+
+#: templates/comics/base.html:65
+msgid "Home"
+msgstr "Início"
+
+#: templates/comics/base.html:66
+msgid "See all published strips in a list"
+msgstr "Ver todas as tirinhas publicadas em uma lista"
+
+#: templates/comics/base.html:68
+msgid "Add new content page"
+msgstr "Adicionar nova página de conteúdo"
+
+#: templates/comics/base.html:68
+msgid "add page"
+msgstr "adicionar página"
+
+#: templates/comics/edit_comic.html:16 templates/comics/edit_page.html:10
+msgid "Save"
+msgstr "Salvar"
+
+#: templates/comics/edit_comic.html:17
+msgid "Clear"
+msgstr "Limpar"
+
+#: templates/comics/mature_content.html:6
+msgid ""
+"This comic possibly has <b style=\"color: pink;\">mature content</b>.\n"
+"    If you're above eighteen(18) years old, please, click in the button "
+"ahead\n"
+"    to proceed"
+msgstr ""
+"Esta revistinha possivelmente contém <b style=\"color: pink;\">conteúdo "
+"adulto</b>.\n"
+"    Se você tem mais de dezoito(18) anos de idade, por favor, clique no "
+"linka seguir\n"
+"    para prosseguir"
+
+#: templates/comics/mature_content.html:9
+msgid "Proceed"
+msgstr "Prosseguir"
+
+#: templates/comics/status.html:21
+msgid "Please, configure Django-Comics"
+msgstr "Por favor, configure o Django-Comics"
+
+#: templates/comics/status.html:26
+msgid ""
+"This is the initial page for a fresh comics instalation. \n"
+"            If you're seeing this page, it means your WebComic is not ready "
+"yet"
+msgstr ""
+"Esta é a página inicial para uma instalação nova do Comics. \n"
+"Se você está vendo esta página, isso significa que sua Revistinha Online não "
+"está pronta ainda"
+
+#: templates/comics/status.html:28
+msgid "Below, check your Django-Comics app status"
+msgstr "Abaixo, cheque o status do seu aplicativo Django-Comics"
+
+#: templates/comics/status.html:33
+msgid "Resource"
+msgstr "Recurso"
+
+#: templates/comics/status.html:47
+msgid "Visit the administrative page to correct any issues"
+msgstr "Visite a página administrativa para resolver quaisquer problemas"
+
+#: templates/comics/status.html:48
+msgid "Check out the"
+msgstr "Confira a"
+
+#: templates/comics/status.html:48
+msgid "project page"
+msgstr "página do projeto"
+
+#: templates/comics/status.html:48
+msgid "for instructions on how to fix these problem"
+msgstr "para instruções de como resolver estes problemas"
+
+#: templates/comics/webcomic.html:32
+#, fuzzy
+msgid "There are no strips avaiable at the moment"
+msgstr "Não há tirinhas disponíveis no momento"
+
+#: templates/comics/webpage.html:9
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/comics/webpage.html:10
+msgid "Remove"
+msgstr "Remover"
+
+#: templates/comics/includes/comments_form.html:4
+msgid "Comment"
+msgstr "Comentar"
+
+#: templates/comics/includes/comments_form.html:25
+msgid "Send"
+msgstr "Enviar"
+
+#: templates/comics/includes/comments_form.html:26
+msgid "Clean form"
+msgstr "Limpar formulário"
+
+#: templates/comics/includes/forward_bar.html:7
+msgid "First strip"
+msgstr "Primeira tirinha"
+
+#: templates/comics/includes/forward_bar.html:8
+#: templates/comics/includes/forward_bar.html:10
+msgid "Previous strip"
+msgstr "Tirinha anterior"
+
+#: templates/comics/includes/forward_bar.html:14
+#: templates/comics/includes/forward_bar.html:17
+msgid "Next strip"
+msgstr "Próxima tirinha"
+
+#: templates/comics/includes/forward_bar.html:15
+msgid "Last strip"
+msgstr "Última tirinha"
+
+#: templates/comics/includes/simple_forward_bar.html:6
+msgid "first strip"
+msgstr "primeira tirinha"
+
+#: templates/comics/includes/simple_forward_bar.html:8
+msgid "previous strip"
+msgstr "tirinha anterior"
+
+#: templates/comics/includes/simple_forward_bar.html:12
+msgid "next strip"
+msgstr "próxima tirinha"
+
+#: templates/comics/includes/simple_forward_bar.html:14
+msgid "current strip"
+msgstr "Ir para a tirinha atual"

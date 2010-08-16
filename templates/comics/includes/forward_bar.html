@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% if page.paginator.count %}
+<div class="clear">
+    <div>
+        {% if page.has_previous %}
+        <a href="?page=1">{% trans "First strip" %}</a>
+        <a href="?page={{page.previous_page_number}}">{% trans "Previous strip" %}</a>
+        {% else %}
+        <a>{% trans "Previous strip" %}</a>
+        {% endif %}
+        
+        {% if page.has_next %}
+        <a href="?page={{page.next_page_number}}">{% trans "Next strip" %}</a>
+        <a href="?page={{page.paginator.num_pages}}">{% trans "Last strip" %}</a>
+        {% else %}
+        <a>{% trans "Next strip" %}</a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends "comics/base.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="clear">
+    <table class="list_webcomics">
+        <thead>
+            <tr>
+                {# <th class="col1">{% trans "Logo" %}</th> #}
+                <th class="col2">{% trans "Webcomic" %}</th>
+                <th class="col3">{% trans "P. strips" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for obj in object_list %}
+            <tr {% if forloop.counter|divisibleby:2 %}class="mark"{% endif %}>
+                {#<td class="col1"><img src="{{ obj.logo.url }}" alt="logo" /></td>#}
+                <td class="col2"><a href="{{obj.link}}">{{obj}}</a></td>
+                <td class="col3" title='{% trans "Number of published strips" %}'>{{ obj.strips_count }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

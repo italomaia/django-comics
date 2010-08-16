@@ -1,0 +1,13 @@
+{% extends "comics/webcomic.html" %}
+{% load i18n %}
+
+{% block body %}
+<div style="margin-top: 1em;">
+    <form method="post" enctype="multipart/form-data">
+        <ul>
+            {% include "comics/form.html" %}
+        </ul>
+    <input name="_save" type="submit" value='{% trans "Save" %}' />
+    </form>
+</div>
+{% endblock body %}

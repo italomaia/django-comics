@@ -1,0 +1,24 @@
+{% extends "comics/base.html" %}
+{% load i18n %}
+
+{% block body %}
+<table class="archive">
+	<legend>
+		<b><a href="{{webcomic.link}}">{{webcomic}}</a> {% trans "Archive" %}</b></legend>
+    <thead>
+        <tr>
+            <th class="title">{% trans "Title"%}</th>
+            <th class="created">{% trans "Released"%}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for strip in page.object_list %}
+    <tr>        
+        <td class="title">
+        	<a href="{{strip.link}}">{{strip}}</a></td>
+        <td class="created">{{strip.created|date:"d/M/Y, G:i"}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock body %}
