@@ -22,7 +22,7 @@ class EditWCForm(forms.ModelForm):
     thumbnail = forms.ImageField(label=webcomic_thumb.verbose_name,
                                  help_text=webcomic_thumb.help_text,
                                  widget=ForumFileWidget())
-    class Meta: 
+    class Meta:
         model = WebComic
         fields = ('image', 'thumbnail', 'description', 'mature_flag')
 
@@ -34,27 +34,3 @@ class EditStripForm(forms.ModelForm):
     class Meta:
         model = Strip
         fields = ('name', 'description', 'legend', 'image', 'tags', 'enable_comments')
-
-#class WebComicForm(forms.ModelForm):
-    
-    
-    #def clean_thumbnail(self):
-        #data = self.cleaned_data["thumbnail"]
-        #if isinstance( data, unicode ):
-            ## no changes made...returning
-            #return data
-        
-        #image_data = data.read()
-        
-        #from StringIO import StringIO
-        #from PIL import Image
-        
-        ## validating thumbnail size
-        #if len(image_data)/1024 > app_settings.THUMBNAIL_MAX_SIZE:
-            #raise forms.ValidationError(_("Thumbnail's size is too big. Max is %(size)dkb") % {"size":app_settings.THUMBNAIL_MAX_SIZE})
-        
-        #return data
-    
-    #class Meta:
-        #model = WebComic
-
