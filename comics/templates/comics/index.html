@@ -8,7 +8,7 @@
             <tr>
                 {# <th class="col1">{% trans "Logo" %}</th> #}
                 <th class="col2">{% trans "Webcomic" %}</th>
-                <th class="col3">{% trans "P. strips" %}</th>
+                <th class="col3">{% trans "Published" %}</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +16,7 @@
             <tr {% if forloop.counter|divisibleby:2 %}class="mark"{% endif %}>
                 {#<td class="col1"><img src="{{ obj.logo.url }}" alt="logo" /></td>#}
                 <td class="col2"><a href="{{obj.link}}">{{obj}}</a></td>
-                <td class="col3" title='{% trans "Number of published strips" %}'>{{ obj.strips_count }}</td>
+                <td class="col3" title='{% trans "Number of published strips" %}'>{{ obj.strips_count }} {% trans "strip" %}{{ obj.strips_count|pluralize }}</td>
             </tr>
         {% endfor %}
         </tbody>

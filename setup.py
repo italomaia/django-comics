@@ -11,8 +11,9 @@ setuptools.setup(
     ],
 
     install_requires=[
-        "django",
+        "django>1.1",
         "PIL",
+        "markdown",
     ],
 
     author="Italo Maia",

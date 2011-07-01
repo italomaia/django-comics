@@ -8,43 +8,39 @@
 
     <head>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    
-    <!-- Framework CSS -->
-    <link media="screen, projection" rel="stylesheet" href="{{MEDIA_URL}}css/screen.css" type="text/css"  />
-    <link media="print" rel="stylesheet" href="{{MEDIA_URL}}css/print.css" type="text/css" />
-    <!--[if IE]>
-    <link media="screen, projection" rel="stylesheet" href="{{MEDIA_URL}}css/ie.css" type="text/css" />
-    <![endif]-->
-    
+
+    <!-- CSS -->
+    <link media="all" rel="stylesheet" href="{{ STATIC_URL }}css/more.css" type="text/css"  />
+
     <style type="text/css">.mark{background-color: #ccc;}</style>
-        
+
     <title>{% trans "Please, configure Django-Comics"%}</title>
-        
+
     </head>
     <body>
         <div class="container">
-            <p>{% blocktrans %}This is the initial page for a fresh comics instalation. 
+            <p>{% blocktrans %}This is the initial page for a fresh comics instalation.
             If you're seeing this page, it means your WebComic is not ready yet{% endblocktrans %}.</p>
             <p>{% trans "Below, check your Django-Comics app status"%}:</p>
-                
+
                 <table class="status">
                 <caption><strong>Django-Comics Status</strong></caption>
-                	<thead><tr>
-	                	<th>{% trans "Resource"%}</th>
-	                	<th style="text-align: center;">Status</th>
-                	</tr></thead>
-                	<tbody>
-                	{% for key,value in data.items %}
-                	<tr class="{{forloop.counter|divisibleby:"2"|yesno:"mark,"}}">
-                	    <td>{{key}}</td>
-                	    <td style="text-align: center;cursor:default;">
-                		<b>{{value}}</b>
-                	</td>
+                    <thead><tr>
+                        <th>{% trans "Resource"%}</th>
+                        <th style="text-align: center;">Status</th>
+                    </tr></thead>
+                    <tbody>
+                    {% for key,value in data.items %}
+                    <tr class="{{forloop.counter|divisibleby:"2"|yesno:"mark,"}}">
+                        <td>{{key}}</td>
+                        <td style="text-align: center;cursor:default;">
+                        <b>{{value}}</b>
+                    </td>
                     </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-	    <p>{% trans "Visit the administrative page to correct any issues" %} <a href='/comics/admin/'>Comics admin</a></p>
+        <p>{% trans "Visit the administrative page to correct any issues" %} <a href='/comics/admin/'>Comics admin</a></p>
             <p>{% trans "Check out the"%} <a href="http://code.google.com/p/django-comics/" class="external">{% trans "project page"%}</a> {% trans "for instructions on how to fix these problem"%}.</p>
         </div>
     </body>

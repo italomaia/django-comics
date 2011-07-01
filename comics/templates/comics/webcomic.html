@@ -5,12 +5,12 @@
 {% if user.is_authenticated %}
 {% ifequal webcomic.owner user %}
     <strong>Webcomic:</strong>
-    <a href="{{webcomic.link.edit}}">Edit</a>
+    <a href="{{ webcomic.link.edit }}">Edit</a>
     -
     <strong>Strip:</strong>
-    <a href="{{webcomic.link.add_strip}}">Add</a>
+    <a href="{{ webcomic.link.add_strip }}">Add</a>
     {% if strip %}
-    <a href="{{strip.link.edit}}">Edit</a>
+    <a href="{{ strip.link.edit }}">Edit</a>
     {% endif %}
 {% endifequal %}
 {% endif %}
@@ -21,25 +21,25 @@
 {% if webcomics.count %}
 <div class="clearfix shelf">
     {% for webcomic in webcomics %}
-    <a class="url comic" href="{{webcomic.link}}">
-        <img alt="Logo" src='{{webcomic.thumbnail|thumbnail:"60x80"}}'></img></a>
+    <a class="url comic" href="{{ webcomic.link }}">
+        <img alt="Logo" src='{{ webcomic.thumbnail|thumbnail:"60x80" }}'></img></a>
     {% endfor %}
 </div>
 {% endif %}
 
 {% if strip %}
-    
+
     <div class="clear strip_content">
-        <a {% if strip.next_strip %} href="{{strip.next_strip.link}}" {% else %} href="{{strip.link}}" {% endif %}>
-            <img id="strip_image" title="{{strip.name}}" alt="Strip {{strip.name}}" src="{{strip.image.url}}"></img></a>        
+        <a {% if strip.next_strip %} href="{{ strip.next_strip.link }}" {% else %} href="{{ strip.link }}" {% endif %}>
+            <img id="strip_image" title="{{ strip.name }}" alt="Strip {{ strip.name }}" src="{{ strip.image.url }}"></img></a>
     </div>
-    
+
     {% if strip.legend %}
     <div class="clear strip_legend">
         {{strip.legend|markdown}}
     </div>
     {% endif %}
-    
+
     {% include "comics/includes/simple_forward_bar.html" %}
 
 {% else %}

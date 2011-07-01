@@ -3,7 +3,7 @@
 
 {% block body %}
 <div style="margin-top: 1em;">
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
         <ul>
             {% include "comics/form.html" %}
         </ul>

@@ -1,0 +1,208 @@
+/*  More Framework
+    https://bitbucket.org/italomaia/more-framework
+    by Italo Maia
+
+    License: http://creativecommons.org/licenses/MIT/
+
+    Coding style:
+    * http://drupal.org/node/302199
+    * http://www.phpied.com/css-coding-conventions/
+* */
+
+/*  Resets
+    ------  */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup,
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video, textarea {
+    display: block;
+    clear:both;
+}
+
+table{ border-spacing: 0px; width:100%; }
+table td:first-child, table th:first-child{ text-align:left; padding-left:4px; }
+table tr.even{ background-color: #F7F7F7; }
+
+nav { padding: 0px .4em; }
+nav > ul { margin-bottom: 0px; }
+nav > a+a { margin-left: 4px; }
+
+a { cursor: default; }
+a img { border: 0px; }
+a[href] { cursor: pointer; }
+
+figure { position: relative; }
+figure img { width: 100%; }
+
+ul, ol, dl { margin-bottom: 10px; }
+li, dd { margin-left: 24px; }
+dt { font-weight:bold; }
+
+form > ul, nav > ul { list-style: none; }
+form > ul > li, nav > ul > li { margin-left: 0px; }
+
+
+/*  Typography presets
+    ------------------  */
+
+body{
+    font: 16px/24px Georgia, serif;
+}
+
+.gigantic {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 52px;
+    letter-spacing: -2px;
+}
+
+h1 { font-size: 36px; line-height: 40px; letter-spacing: -1px; }
+h2 { font-size: 32px; line-height: 40px; }
+h3 { font-size: 28px; line-height: 32px; }
+h4 { font-size: 24px; line-height: 32px; }
+h5 { font-size: 20px; line-height: 24px; }
+h6 { font-size: 18px; line-height: 24px; }
+
+h1, h2, h3, h4, h5, h6, .gigantic { display:block }
+
+p { text-align: justify; padding: .2em .4em; }
+p, pre { margin-bottom: 10px; }
+progress { border:1px solid lightgray; background-color:white; }
+
+label {
+    font-weight: bold;
+    padding-left:2px;
+    padding-right:2px;
+    display: inline-block;
+    text-align: center;
+}
+
+strong, b { color: #b03060; }
+em, i { color: #a020f0; }
+
+del, ins { font-weight: bold; }
+del { color: #ff4500; }
+ins { color: #4169e1; }
+
+.small, small {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+/*  Some nice effects
+    -----------------  */
+
+.note {
+    padding: 20px 14px;
+    margin-bottom: 10px;
+    background-image: -moz-linear-gradient(center top, #FFFF84 0%, #FFFF84 50%, #FFFF9E 100%);
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.21, #FFFF84), color-stop(0.61, #FFFF9E));
+
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.235);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.235);
+}
+
+input[type=range] { height:10px; } /* badly supported in FF */
+input[type=url] { text-decoration:underline; }
+
+input[type=text], input[type=password],
+input[type=time], input[type=date], input[type=datetime],
+input[type=datetime-local], input[type=email],
+input[type=url], input[type=search], input[type=color],
+input[type=tel], input[type=number], input[type=month], input[type=week],
+select, textarea {
+    margin:1px 0;
+}
+
+input[type=text], input[type=password],
+input[type=time], input[type=date], input[type=datetime],
+input[type=datetime-local], input[type=email],
+input[type=url], input[type=search], input[type=color],
+input[type=tel], input[type=color], input[type=range], select{
+    width:160px;
+}
+input[type=number], input[type=month], input[type=week]{
+    width:80px;
+    text-align:center;
+}
+input[type=text], input[type=password],
+input[type=time], input[type=date], input[type=datetime],
+input[type=datetime-local], input[type=email], input[type=number],
+input[type=url], input[type=tel], input[type=search], input[type=color],
+input[type=submit], input[type=button], input[type=reset], button,
+textarea, select{
+    padding: 4px 6px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+/* button specific styles */
+button, input[type=button] { color: #000000; }
+input[type=submit], button[type=submit] { color: #4169e1; }
+input[type=reset], button[type=reset] { color: #b22222; }
+
+input[type=submit], input[type=reset],
+input[type=button], button {
+    background-color: #FFFAFA;
+    background: -moz-linear-gradient(90deg, #ECECEC, #F4F4F4) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(90deg, #ECECEC, #F4F4F4) repeat scroll 0 0 transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type=submit]:active, input[type=button]:active, input[type=reset]:active, button:active{
+    background-color: #EEE9E9;
+    background: -moz-linear-gradient(90deg, #F4F4F4, #ECECEC) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(90deg, #F4F4F4, #ECECEC) repeat scroll 0 0 transparent;
+}
+
+
+/*  Helper classes 
+    --------------  */
+.block{ display:inline-block; margin-right:24px; }
+
+
+/*  Default 11-column layout
+    60 px columns, 24 px gutters, 42 px margins, 984 px total
+    ---------------------------------------------------------
+    1     2      3      4      5      6      7      8      9      10     11
+    60px  144px  228px  312px  396px  480px  564px  648px  732px  816px  900px */
+
+body{
+    background-color: #FCFCFC;
+    color: rgb(60,60,60);
+    margin: auto;
+    width: 900px;
+    padding: 42px 0;
+    -webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+    -webkit-tap-highlight-color: rgb(255,255,0);
+}
+
+/* adjust for 8-column layout and below */
+@media only screen and (max-width: 983px){
+    .gigantic {
+        font-size: 32px;
+        line-height: 34px;
+        letter-spacing: -2px;
+    }
+
+    h1{ font-size: 26px; line-height: 28px; letter-spacing: -1px; }
+    h2{ font-size: 24px; line-height: 28px; }
+    h3{ font-size: 20px; line-height: 22px; }
+    h4{ font-size: 18px; line-height: 22px; }
+    h5{ font-size: 16px; line-height: 20px; }
+    h6{ font-size: 14px; line-height: 20px; }
+}

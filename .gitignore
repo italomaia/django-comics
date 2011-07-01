@@ -1,1 +1,4 @@
 *.pyc
+*.sqlite
+comics/images/
+media_root/

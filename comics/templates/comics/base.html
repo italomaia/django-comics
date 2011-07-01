@@ -8,42 +8,39 @@
 
 <head>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    
-    <!-- Framework CSS -->
-    <link media="screen, projection" rel="stylesheet" href="{{MEDIA_URL}}css/screen.css" type="text/css"  />
-    <link media="print" rel="stylesheet" href="{{MEDIA_URL}}css/print.css" type="text/css" />
-    <!--[if IE]>
-    <link media="screen, projection" rel="stylesheet" href="{{MEDIA_URL}}css/ie.css" type="text/css" />
-    <![endif]-->
-    
-    <link media="screen, projection" rel="stylesheet" href="{{MEDIA_URL}}css/MooEditable.css" type="text/css"  />
-    <link media="screen, projection" rel="stylesheet" href="{{MEDIA_URL}}css/comics_styles.css" type="text/css" />
-        
-    <script src="{{MEDIA_URL}}js/mootools-1.2.4-core-yc.js" type="text/javascript"></script>
-    <script src="{{MEDIA_URL}}js/mootools-1.2.2.2-more.js" type="text/javascript"></script>
-    <script src="{{MEDIA_URL}}js/MooEditable.js" type="text/javascript"></script>
-    <script src="{{MEDIA_URL}}js/comics.js" type="text/javascript"></script>
-    
+
+    <!-- CSS -->
+    <link media="all" rel="stylesheet" href="{{ STATIC_URL }}css/more.css" type="text/css"  />
+    <link media="all" rel="stylesheet" href="{{ STATIC_URL }}css/comics_styles.css" type="text/css"  />
+
+    <link media="screen, projection" rel="stylesheet" href="{{ STATIC_URL }}css/MooEditable.css" type="text/css"  />
+    <link media="screen, projection" rel="stylesheet" href="{{ STATIC_URL }}css/comics_styles.css" type="text/css" />
+
+    <script src="{{ STATIC_URL }}js/mootools-1.2.4-core-yc.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/mootools-1.2.2.2-more.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/MooEditable.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/comics.js" type="text/javascript"></script>
+
     <title>{% block title %}{{webcomic.name|capfirst}}{% endblock title %}</title>
-    
+
     {% block head %}
     {% endblock head %}
-    
+
 </head>
 
 <body>
     <div class="container">
         <div class="comics-body">
             <div>
-            
+
             {% if user.is_authenticated and user.is_superuser %}
             <a href='{% url admin:index %}'>Admin</a>
             {% endif %}
-            
+
             {% block more-options %} {% endblock more-options %}
-            
+
             </div>
-        
+
             {# these user messages are showed with javascript #}
             {% if messages %}
             <ul id="temp_messages">
@@ -52,19 +49,19 @@
             {% endfor %}
             </ul>
             {% endif %}
-        
+
             {% if webcomic.image %}
-            <div class="comic-headerImage">	
+            <div class="comic-headerImage">
                 <a href="{{webcomic.link}}">
                     <img alt="Webcomic" class="comic-headerImage" src="{{ webcomic.image.url }}"></img>
                 </a>
             </div>
             {% endif %}
-        
+
             <div class="clear big_links">
                 <a href="{% url comics-index %}">{% trans "Home" %}</a>
                 {# <a href="{{webcomic.link.archive}}" title='{% trans "See all published strips in a list" %}'>{% trans "Archive"%}</a> #}
-                
+
                 {% if user.is_authenticated %}
                 <a href="{% url auth_logout %}?next={% if webcomic %}{{webcomic.link}}{% else %}{% url comics-index %}{% endif %}">Logout</a>
                 {% else %}
@@ -72,7 +69,7 @@
                 {% endif %}
             </div>
             <hr />
-            
+
             {% block body %}
             {% endblock body %}
         </div>

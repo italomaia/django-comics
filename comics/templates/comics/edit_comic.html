@@ -6,11 +6,11 @@
 <div style="margin-top: 1em;">
     <fieldset>
         <legend>{{form_legend}}</legend>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
             <ul class="lista clear">
-                
+
                 {% include "comics/form.html" %}
-                
+
             </ul>
             <div class="span-4">
                 <input type="submit" name="_save" value='{% trans "Save"%}' />

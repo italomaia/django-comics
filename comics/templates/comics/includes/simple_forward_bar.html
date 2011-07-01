@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <div class="clear strip_nav">
-    
+
     <map name="strips_map">
         <area title='{% trans "first strip" %}' shape="rect" coords="0,0,50,50" href="{{webcomic.first_strip.link}}"  />
         {% if strip.prev_strip %}
@@ -14,5 +14,5 @@
         <area title='{% trans "current strip" %}' shape="rect" coords="185,0,230,50" href="{{webcomic.current_strip.link}}"  />
     </map>
 
-    <img usemap="#strips_map" src="{{MEDIA_URL}}images/comics/nav.png" alt="" />
+    <img usemap="#strips_map" src="{{ STATIC_URL }}images/comics/nav.png" alt="" />
 </div>
