@@ -4,7 +4,7 @@ Django comics is a simple webcomic publishing system.
 
 How to setup django-comics?
 ===========================
-pip install -e git://github.com/italomaia/django-comics.git
+pip install -e git://github.com/italomaia/django-comics.git#egg=comics
 then add to your installed apps: 'registration', 'django.contrib.markup', 'django.contrib.comments' and 'django.contrib.admin'.
 Configure MEDIA_URL and STATIC_URL and your database. Your project urls.py should look somewhat like this:
 
