@@ -11,7 +11,7 @@ setuptools.setup(
     ],
 
     install_requires=[
-        "django>1.1",
+        "django>1.2",
         "PIL",
         "markdown",
     ],

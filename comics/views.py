@@ -30,9 +30,11 @@ from forms import EditWCForm, EditStripForm
 
 templates_dir= "comics"
 
+
 def rp(template_name, ctx, request):
     return render_to_response(path.join(templates_dir, template_name), 
                               ctx, context_instance=RequestContext(request))
+
 
 def show_webcomic(request, slug, strip_id=None, template_name="webcomic.html"):
     ctx = {}
@@ -45,16 +47,19 @@ def show_webcomic(request, slug, strip_id=None, template_name="webcomic.html"):
     
     return rp(template_name, ctx, request)
 
+
 def show_archive(request, slug, template_name="archive.html"):
     ctx = {}
     ctx["webcomic"] = get_object(WebComic, slug=slug)
     return rp(template_name, ctx, request)
+
 
 def show_blog_page(request, slug, page_id, template_name="blog_page.html"):
     ctx = {}
     ctx["webcomic"] = get_object(WebComic, pk=slug)
     ctx["blog_page"] = get_object(BlogPage, pk=page_id)
     return rp(template_name, ctx, request)
+
 
 @login_required
 def edit(request, slug, pk=None, template_name="edit.html"):
@@ -76,6 +81,7 @@ def edit(request, slug, pk=None, template_name="edit.html"):
             return HttpResponseRedirect( ctx["form"].save().link() )
     ctx["form"] = Form(instance=instance)
     return rp(template_name, ctx, request)
+
 
 @login_required
 def add_strip(request, slug, template_name="edit.html"):

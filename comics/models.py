@@ -8,23 +8,24 @@ from django.template.defaultfilters import slugify
 
 import utils
 
+
 class DatedModel(models.Model):
     created_time = models.DateTimeField(_("Created time"), auto_now_add=True)
     modified_time = models.DateTimeField(_("Created time"), auto_now=True)
 
     class Meta: abstract=True
 
+
 class BlogPage(DatedModel):
     "Webpage é uma página criada dinâmicamente pelo autor"
 
     webcomic = models.ForeignKey("WebComic", related_name="blog_page_list", editable=False)
     published = models.BooleanField(_("Published?"), default=False)
-    slug = models.SlugField(editable=False)# used in the url make up
+    slug = models.SlugField(editable=False)  # used in the url make up
     title = models.CharField(_("Title"), max_length=100)
     content = models.TextField(_("Well, write down your thoughts"))
 
     class Meta:
-        db_table = "comics_blogpage"
         ordering = ["created_time"]
         verbose_name = "Page"
         verbose_name_plural = "Pages"
@@ -47,15 +48,15 @@ class WebComic(DatedModel):
     Representa uma revistinha online do autor.
     Possui nome algumas configurações como flag de conteúdo maduro
     """
-    slug = models.SlugField(primary_key=True, editable=False)# used in the url make up
+    slug = models.SlugField(primary_key=True, editable=False)  # used in the url make up
     name = models.CharField(_("What's the webcomic name?"), max_length=100,
                             help_text=_("Name your baby!"))
 
-    image = models.ImageField(_("Header Image"), upload_to="comics/images/%Y/%b/headers/",
+    image = models.ImageField(_("Header Image"), upload_to="comics/%Y/%b/headers/",
                               help_text=_("This image goes at the top of the webpage") )
 
     thumbnail = models.ImageField(_("Logo"), blank=True, null=True,
-                                  upload_to="comics/images/%Y/%b/headers/thumbnails/")
+                                  upload_to="comics/%Y/%b/headers/thumbnails/")
 
     owner = models.ForeignKey(User, related_name="comics",
                               verbose_name=_("Who's the artist behind the pencil?"))
@@ -96,7 +97,7 @@ class WebComic(DatedModel):
 
     class Meta:
         ordering = ['slug']
-        db_table = "comics_webcomic"
+
 
 class Strip(DatedModel):
     "Representa uma tirinha de uma revistinha do autor"
@@ -120,6 +121,10 @@ class Strip(DatedModel):
                             help_text=_("Comma separeted (ex: subject, subject...") )
 
     enable_comments = models.BooleanField(_('Enable comments?'), default=False)
+    
+    class Meta:
+        ordering = ["-created_time"]
+        get_latest_by = "created_time"
 
     def __unicode__(self):
         return "%s, strip %d-%s, %s" % (self.webcomic.name.capitalize(),
@@ -137,12 +142,7 @@ class Strip(DatedModel):
 
     get_absolute_url = link # alias
 
-    class Meta:
-        ordering = ["-created_time"]
-        get_latest_by = "created_time"
-        db_table = "comics_strip"
-
-# signals
+# --- SIGNALS ---
 
 # updating next and prev links
 def strip_update_links(sender, instance, created, *args, **kwargs):
@@ -153,7 +153,7 @@ def strip_update_links(sender, instance, created, *args, **kwargs):
 
         try:
             last_strip = webcomic.strips.exclude(id__exact=instance.id).get(next_strip__isnull=True)
-            instance.number = last_strip.number+1
+            instance.number = last_strip.number + 1
             instance.prev_strip=last_strip
             last_strip.next_strip=instance
             instance.save()

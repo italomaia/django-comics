@@ -1,0 +1,8 @@
+{% extends "comics/base.html" %}
+
+{% block body %}
+<form method="post">{% csrf_token %}
+{{ form.as_ul }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}
